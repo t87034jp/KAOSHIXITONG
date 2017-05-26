@@ -16,6 +16,7 @@ namespace zaixiankaoshi
         string[] str;
         ArrayList data = new ArrayList();
         int i=0;
+        int flag = 0;
         public Form6()
         {
             InitializeComponent();
@@ -150,17 +151,67 @@ namespace zaixiankaoshi
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if(flag==0){
+            flag = 1;
             int score = 0;
-            String str3="";
             for (int j = 0; (j+7) < str.Length;j+=7 )
             {
                 if (data[j / 7].Equals(str[j+6])) 
                 {
                     score += 1;
                 }
-                str3 =str3+" "+ data[j / 7];
+
             }
-            MessageBox.Show(str3);
+            MessageBox.Show("本次测试得分为"+score.ToString()+"分");
+            i = 0;
+            label2.Text = str[1];
+            radioButton1.Text =str[2];
+            radioButton2.Text = str[3];
+            radioButton3.Text = str[4];
+            radioButton4.Text = str[5];
+            String str1 = "";
+            str1 += data[0];
+            if (str1 == "A")
+            {
+                radioButton1.Checked = true;
+                radioButton2.Checked = false;
+                radioButton3.Checked = false;
+                radioButton4.Checked = false;
+            }
+            else
+                if (str1 == "B")
+                {
+                    radioButton2.Checked = true;
+                    radioButton1.Checked = false;
+                    radioButton3.Checked = false;
+                    radioButton4.Checked = false;
+                }
+                else
+                    if (str1 == "C")
+                    {
+                        radioButton3.Checked = true;
+                        radioButton2.Checked = false;
+                        radioButton1.Checked = false;
+                        radioButton4.Checked = false;
+                    }
+                    else
+                        if (str1 == "D")
+                        {
+                            radioButton4.Checked = true;
+                            radioButton2.Checked = false;
+                            radioButton3.Checked = false;
+                            radioButton1.Checked = false;
+                        }
+                        else
+                        {
+                            radioButton4.Checked = false;
+                            radioButton2.Checked = false;
+                            radioButton3.Checked = false;
+                            radioButton1.Checked = false;
+                        }
+            label3.Text = "答案："+str[i+6];
+            }
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -181,6 +232,13 @@ namespace zaixiankaoshi
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             data[i / 7] = "D";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Hide();
         }
         
     }
