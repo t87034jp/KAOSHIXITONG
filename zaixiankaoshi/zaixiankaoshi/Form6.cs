@@ -13,7 +13,8 @@ namespace zaixiankaoshi
 {
     public partial class Form6 : Form
     {
-        string[] str;
+        string[] str1;
+        string[] str = new String[70];
         ArrayList data = new ArrayList();
         int i=0;
         int flag = 0;
@@ -28,9 +29,35 @@ namespace zaixiankaoshi
             Stream stream = webResp.GetResponseStream();
             StreamReader sr = new StreamReader(stream, Encoding.GetEncoding("UTF-8"));
             string html = sr.ReadToEnd().Trim();
-            str =html.Split('@');
+            str1 =html.Split('@');
             sr.Close();
             stream.Close();
+            int[] a = new int[10];
+            Random ran = new Random();
+            for(int i1=0;i1<10;i1++)
+            {
+                a[i1]=ran.Next(0,str1.Length-1);
+                for (int i2 = 0; i2 < i1;i2++ )
+                {
+                    if(a[i2]/7*7==a[i1]/7*7)
+                    {
+                        a[i1] = ran.Next(0, str1.Length - 1);
+                        i2 = -1;
+                    }
+                }
+            }
+            for (int i3=0; i3 < 10;i3++ )
+            {
+                str[i3*7] = str1[a[i3]/7*7];
+                str[i3 * 7+1] = str1[(a[i3] / 7*7)+1];
+                str[i3 * 7+2] = str1[(a[i3] / 7*7)+2];
+                str[i3 * 7+3] = str1[(a[i3] / 7*7)+3];
+                str[i3 * 7+4] = str1[(a[i3] / 7*7)+4];
+                str[i3 * 7+5] = str1[(a[i3] / 7*7)+5];
+                str[i3 * 7+6] = str1[(a[i3] / 7*7)+6];
+
+            }
+
             label2.Text = str[i+1];
             radioButton1.Text = str[i + 2];
             radioButton2.Text = str[i + 3];
@@ -99,6 +126,17 @@ namespace zaixiankaoshi
                         radioButton3.Checked = false;
                         radioButton1.Checked = false;
                     }
+                if (flag == 1)
+                {
+                    if (data[i / 7].Equals(str[i + 6]))
+                    {
+                        label3.Text = "答案：" + str[i + 6] + "   √";
+                    }
+                    else
+                    {
+                        label3.Text = "答案：" + str[i + 6] + "   ×";
+                    }
+                }
             }
         }
 
@@ -146,6 +184,17 @@ namespace zaixiankaoshi
                     radioButton3.Checked = false;
                     radioButton1.Checked = false;
                 }
+                if (flag == 1)
+                {
+                    if (data[i / 7].Equals(str[i + 6]))
+                    {
+                        label3.Text = "答案：" + str[i + 6] + "   √";
+                    }
+                    else
+                    {
+                        label3.Text = "答案：" + str[i + 6] + "   ×";
+                    }
+                }
             }
         }
 
@@ -154,7 +203,7 @@ namespace zaixiankaoshi
             if(flag==0){
             flag = 1;
             int score = 0;
-            for (int j = 0; (j+7) < str.Length;j+=7 )
+            for (int j = 0; (j+7) < str.Length+1;j+=7 )
             {
                 if (data[j / 7].Equals(str[j+6])) 
                 {
@@ -209,8 +258,15 @@ namespace zaixiankaoshi
                             radioButton3.Checked = false;
                             radioButton1.Checked = false;
                         }
-            label3.Text = "答案："+str[i+6];
+            if (data[i / 7].Equals(str[i + 6]))
+            {
+                label3.Text = "答案：" + str[i + 6] + "   √";
             }
+            else 
+            {
+                label3.Text = "答案：" + str[i + 6] + "   ×";
+            }
+           }
 
         }
 

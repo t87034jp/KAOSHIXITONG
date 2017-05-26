@@ -55,6 +55,10 @@ namespace zaixiankaoshi
             {
                 MessageBox.Show("题号已存在");
             }
+            else
+            {
+                MessageBox.Show("添加成功");
+            }
         }
     }
 }

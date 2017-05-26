@@ -35,9 +35,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 105);
+            this.button1.Location = new System.Drawing.Point(296, 150);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 56);
+            this.button1.Size = new System.Drawing.Size(164, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "添加学生帐户";
             this.button1.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(277, 255);
+            this.button2.Location = new System.Drawing.Point(296, 260);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 58);
+            this.button2.Size = new System.Drawing.Size(164, 44);
             this.button2.TabIndex = 1;
             this.button2.Text = "删除学生帐户";
             this.button2.UseVisualStyleBackColor = true;

@@ -203,4 +203,71 @@ public class DBbean {
 		return true;
 
 	}
+	
+	public boolean addNormol(String id, String pwd) {
+		conn = DBConnect.getConnection();
+
+		try {
+
+			Statement st = (Statement) conn.createStatement();
+			String sBuffer;
+			sBuffer = (" insert into normol(id,pwd)value"
+					+ "('"
+					+ id
+					+ "','"
+					+ pwd
+					 + "')");
+
+			System.out.printf("sql = %s\n", st.toString());
+			st.executeUpdate(sBuffer);
+
+		} catch (SQLException e) {
+			System.out.printf("Ìí¼ÓÊ§°Ü\n" + e.getMessage());
+			return false;
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					System.out.printf("Ê§°Ü222\n" + e.getMessage());
+					return false;
+				}// try
+			}// if
+
+		}// finally
+
+		return true;
+
+	}
+	
+	public boolean DeleteNormol(String id) {
+		conn = DBConnect.getConnection();
+
+		try {
+
+			Statement st = (Statement) conn.createStatement();
+			String sBuffer;
+			sBuffer = (" delete from normol where id ='"+id+"'");
+
+			System.out.printf("sql = %s\n", st.toString());
+			st.executeUpdate(sBuffer);
+
+		} catch (SQLException e) {
+			System.out.printf("É¾³ýÊ§°Ü\n" + e.getMessage());
+			return false;
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					System.out.printf("Ê§°Ü2222\n" + e.getMessage());
+					return false;
+				}// try
+			}// if
+
+		}// finally
+
+		return true;
+
+	}
 }

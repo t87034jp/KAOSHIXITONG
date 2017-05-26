@@ -44,17 +44,23 @@ namespace zaixiankaoshi
                 {
                     if (type.Equals("2"))
                     {
+
                         Form2 f = new Form2();
                         this.Hide();
                         f.Show();
                     }
-                    else 
+                    else
                     {
                         Form3 f = new Form3();
                         this.Hide();
                         f.Show();
                     }
                 }
+                else 
+                {
+                    MessageBox.Show("账号或密码错误");
+                }
+
                
             
            
