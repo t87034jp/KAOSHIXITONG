@@ -16,3 +16,6 @@ D:\Documents\Visual Studio 2010\Projects\zaixiankaoshi\zaixiankaoshi\obj\x86\Deb
 D:\Documents\Visual Studio 2010\Projects\zaixiankaoshi\zaixiankaoshi\obj\x86\Debug\zaixiankaoshi.Form9.resources
 D:\Documents\Visual Studio 2010\Projects\zaixiankaoshi\zaixiankaoshi\obj\x86\Debug\zaixiankaoshi.Form10.resources
 D:\Documents\Visual Studio 2010\Projects\zaixiankaoshi\zaixiankaoshi\bin\Debug\zaixiankaoshi.exe.config
+D:\KAOSHIXITONG\zaixiankaoshi\zaixiankaoshi\bin\Debug\zaixiankaoshi.exe.config
+D:\KAOSHIXITONG\zaixiankaoshi\zaixiankaoshi\obj\x86\Debug\zaixiankaoshi.exe
+D:\KAOSHIXITONG\zaixiankaoshi\zaixiankaoshi\obj\x86\Debug\zaixiankaoshi.pdb
